@@ -27,6 +27,13 @@ pipeline {
                     reportFiles: 'index.html',
                     reportName: 'JaCoCo Report'
                 ])
+
+                // Publica resumen de cobertura en Jenkins
+                jacoco execPattern: 'target/jacoco.exec', 
+                        classPattern: 'target/classes', 
+                        sourcePattern: 'src/main/java', 
+                        inclusionPattern: '**/*.class', 
+                        exclusionPattern: ''
             }
         }
     }
