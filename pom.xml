@@ -98,6 +98,29 @@
 			</plugin>
 
 
+			<!--Analisis estatico de codigo-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.6.0</version>
+
+				<configuration>
+					<configLocation>checkstyle.xml</configLocation>
+					<!--<outputFormat>html</outputFormat>-->
+					<failsOnError>true</failsOnError>
+				</configuration>
+
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
 		</plugins>
 	</build>
 </project>

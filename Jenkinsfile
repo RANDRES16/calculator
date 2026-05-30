@@ -36,5 +36,13 @@ pipeline {
                         exclusionPattern: ''
             }
         }
+        
+        stage("Static code analysis") {
+            steps {
+                sh "./gradlew checkstyleMain"
+            }
+        }
+
+
     }
 }
