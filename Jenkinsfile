@@ -43,6 +43,17 @@ pipeline {
             }
         }
 
+        stage("Package") {
+            steps {
+                sh "./mvnw clean package"
+            }
+        }
+        
+        stage("Docker build") {
+            steps {
+                sh "docker build -t calculator ."
+            }
+        }
 
     }
 }
